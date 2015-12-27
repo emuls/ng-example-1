@@ -1,0 +1,9 @@
+{
+  "name": "basic-node-server",
+  "description" : "Boiler Plate Node SErver",
+  "license" : "MIT",
+  "repository" : "emuls/basic-node-server",
+  "dependencies" : {
+    "express" : "4.13.3"
+  }
+}
