@@ -10,6 +10,12 @@
             <p>
                 {{clock.now}}
             </p>
+
+            <select ng-model="expression" >
+                <option value="name" />
+                <option value="clock.now" />
+            </select>
+            <h1>Parsed Expression: {{parsedExpression}}</h1>
         </div>
     </body>
 </html>
