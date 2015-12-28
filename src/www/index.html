@@ -5,17 +5,19 @@
     </head>
     <body>
         <div ng-controller="HelloController">
-            <h1>Hello {{name}}</h1>
-            <input type="text" ng-model="name" />
+            <h1>Data Binding Example</h1>
+            Name:<input type="text" ng-model="name" />
+            <h3>Hello {{name}}</h3>
+
+            <h1>$Watch Example</h1>
             <p>
                 {{clock.now}}
             </p>
 
-            <select ng-model="expression" >
-                <option value="name" />
-                <option value="clock.now" />
+            <h1>$Parse Example</h1>
+            <select ng-model="expression.selected" ng-options="option.name for option in expression.options track by option.id">
             </select>
-            <h1>Parsed Expression: {{parsedExpression}}</h1>
+            <h3>Parsed Expression: {{parsedExpression}}</h3>
         </div>
     </body>
 </html>
