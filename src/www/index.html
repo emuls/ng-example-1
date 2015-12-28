@@ -18,6 +18,18 @@
             <select ng-model="expression.selected" ng-options="option.name for option in expression.options track by option.id">
             </select>
             <h3>Parsed Expression: {{parsedExpression}}</h3>
+
+            <h1>$Interpolate Example</h1>
+            <div>
+                <input type="email" ng-model="email.to" />
+            </div>
+            <div>
+                <textarea ng-model="email.body" style="width:400px;height:150px;" ></textarea>
+            </div>
+            <h4>Preview:</h4>
+            <pre>
+                {{email.previewText}}
+            </pre>
         </div>
     </body>
 </html>

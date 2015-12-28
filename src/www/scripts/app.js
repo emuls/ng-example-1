@@ -1,4 +1,4 @@
-angular.module('helloApp', []).controller('HelloController', function($scope, $timeout, $parse){
+angular.module('helloApp', []).controller('HelloController', function($scope, $timeout, $parse, $interpolate){
     $scope.clock = {};
     $scope.name = 'World';
     $scope.expression = {value:'', options:[
@@ -7,10 +7,21 @@ angular.module('helloApp', []).controller('HelloController', function($scope, $t
     ]};
     $scope.expression.selected = $scope.expression.options[0];
     $scope.parsedExpression = '';
+    $scope.email = {};
+    $scope.email.to = 'test@example.com';
+    $scope.email.body = 'My email to: {{to}}';
+    $scope.email.previewText = '';
+
     $scope.$watch('expression.selected', function(newVal, oldVal, scope){
        if(newVal!==oldVal){
            evaluateExpression(newVal.value, scope);
        }
+    });
+    $scope.$watch('email.body', function(body){
+        if(body){
+            var interpolateFunction = $interpolate(body);
+            $scope.previewText = interpolateFunction({to: $scope.email.to});
+        }
     });
 
     var evaluateExpression = function(expr, scope){
