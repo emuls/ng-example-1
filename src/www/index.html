@@ -1,7 +1,15 @@
-<html>
-    <head></head>
+<html ng-app="helloApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="scripts/app.js"></script>
+    </head>
     <body>
-        <h1>Basic Node Server</h1>
-        <p>Hello, this is a basic node server application</p>
+        <div ng-controller="HelloController">
+            <h1>Hello {{name}}</h1>
+            <input type="text" ng-model="name" />
+            <p>
+                {{clock.now}}
+            </p>
+        </div>
     </body>
 </html>
