@@ -20,7 +20,7 @@ angular.module('helloApp', []).controller('HelloController', function($scope, $t
     $scope.$watch('email.body', function(body){
         if(body){
             var interpolateFunction = $interpolate(body);
-            $scope.previewText = interpolateFunction({to: $scope.email.to});
+            $scope.email.previewText = interpolateFunction({to: $scope.email.to});
         }
     });
 
