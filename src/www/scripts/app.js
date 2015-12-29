@@ -1,6 +1,6 @@
-angular.module('exampleApp', ['exampleServices']).controller('ExampleController', function($scope, $timeout, $parse, EmailParser){
+angular.module('exampleApp', ['services']).controller('ExampleController', function($scope, $timeout, $parse, EmailParser){
     $scope.clock = {};
-    $scope.name = 'World';
+    $scope.name = 'world';
     $scope.expression = {value:'', options:[
         {name:'$Parse Name', value:'name', id:1},
         {name:'$Parse clock.now', value:'clock.now', id:2}
