@@ -1,4 +1,4 @@
-angular.module('exampleApp', []).controller('ExampleController', function($scope, $timeout, $parse, $interpolate){
+angular.module('exampleApp', ['exampleServices']).controller('ExampleController', function($scope, $timeout, $parse, EmailParser){
     $scope.clock = {};
     $scope.name = 'World';
     $scope.expression = {value:'', options:[
@@ -17,11 +17,8 @@ angular.module('exampleApp', []).controller('ExampleController', function($scope
            evaluateExpression(newVal.value, scope);
        }
     });
-    $scope.$watch('email.body', function(body){
-        if(body){
-            var interpolateFunction = $interpolate(body);
-            $scope.email.previewText = interpolateFunction({to: $scope.email.to});
-        }
+    $scope.$watchGroup(['email.body','email.to'], function(newValues, oldValues, scope){
+        $scope.email.previewText = EmailParser.parse(newValues[0], {to: newValues[1]});
     });
 
     var evaluateExpression = function(expr){
