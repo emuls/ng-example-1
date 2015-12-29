@@ -1,4 +1,4 @@
-angular.module('helloApp', []).controller('HelloController', function($scope, $timeout, $parse, $interpolate){
+angular.module('exampleApp', []).controller('ExampleController', function($scope, $timeout, $parse, $interpolate){
     $scope.clock = {};
     $scope.name = 'World';
     $scope.expression = {value:'', options:[
@@ -17,10 +17,10 @@ angular.module('helloApp', []).controller('HelloController', function($scope, $t
            evaluateExpression(newVal.value, scope);
        }
     });
-    $scope.$watch('email.body', function(body){
+    $scope.$watch('email.body', function(body, bodyOld, scope){
         if(body){
             var interpolateFunction = $interpolate(body);
-            $scope.email.previewText = interpolateFunction({to: $scope.email.to});
+            $scope.email.previewText = interpolateFunction({to: $scope.email.to, scope});
         }
     });
 
