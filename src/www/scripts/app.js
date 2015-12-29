@@ -17,16 +17,16 @@ angular.module('exampleApp', []).controller('ExampleController', function($scope
            evaluateExpression(newVal.value, scope);
        }
     });
-    $scope.$watch('email.body', function(body, bodyOld, scope){
+    $scope.$watch('email.body', function(body){
         if(body){
             var interpolateFunction = $interpolate(body);
-            $scope.email.previewText = interpolateFunction({to: $scope.email.to, scope});
+            $scope.email.previewText = interpolateFunction({to: $scope.email.to});
         }
     });
 
-    var evaluateExpression = function(expr, scope){
+    var evaluateExpression = function(expr){
         var parseFunction = $parse(expr);
-        $scope.parsedExpression = parseFunction(scope);
+        $scope.parsedExpression = parseFunction($scope);
     }
 
     var updateClock = function(){
