@@ -39,3 +39,30 @@ body{
     clear:both;
     margin:10px;
 }
+
+.exampleContent{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.exampleContent h4{
+    background-color:#ccc;
+    padding:15px;
+}
+
+.exampleContainer label{
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+    font-size:1.25em;
+}
+
+.exampleContainer pre{
+    font-family:monospace;
+    background:#ccc;
+    border:1px solid #323232;
+    margin-left:5px;
+    margin-right:5px;
+    margin-top:0px;
+    padding:10px;
+}
