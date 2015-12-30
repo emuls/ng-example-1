@@ -45,8 +45,9 @@ body{
     padding-right:20px;
 }
 
-.exampleContent h4{
-    background-color:#ccc;
+.exampleContent h4, .exampleContent p{
+    background-color:#f5f5f5;
+    border: 1px solid #bbb;
     padding:15px;
 }
 
