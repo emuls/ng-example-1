@@ -23,7 +23,7 @@ body{
 
 #nav a{
     color:#ffffff;
-    font-size: 1.25em;
+    font-size: 1.10em;
 }
 
 #nav a:visited{
@@ -51,18 +51,16 @@ body{
 }
 
 .exampleContainer label{
-    margin-top:10px;
-    margin-bottom:5px;
+    display:inline-block;
+    margin: 10px 0 0 0;
     font-weight:bold;
     font-size:1.25em;
 }
 
-.exampleContainer pre{
+.exampleContent pre{
     font-family:monospace;
     background:#ccc;
     border:1px solid #323232;
-    margin-left:5px;
-    margin-right:5px;
-    margin-top:0px;
+    margin:2px 5px 2px 5px;
     padding:10px;
 }
