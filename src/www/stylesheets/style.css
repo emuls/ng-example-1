@@ -1,0 +1,41 @@
+body{
+    margin:0;
+    font-family:Arial, Verdana, Times;
+}
+
+#appContainer{
+    margin:0;
+}
+
+#appHeader{
+    position:relative;
+    padding:5px;
+    background:#323232;
+    color:#fff;
+    border-bottom:2px solid #cccccc;
+}
+
+#nav{
+    position:absolute;
+    right:5px;
+    bottom:5px;
+}
+
+#nav a{
+    color:#ffffff;
+    font-size: 1.25em;
+}
+
+#nav a:visited{
+    color:#ffffff;
+    text-decoration:none;
+}
+
+#appContainer>h1{
+    float:left;
+}
+
+#appContainer>#mainView{
+    clear:both;
+    margin:10px;
+}

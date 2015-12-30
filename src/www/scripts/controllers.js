@@ -36,3 +36,7 @@ angular.module('exampleApp').controller('ExampleController', function($scope, $t
     updateClock();
     evaluateExpression($scope.expression.selected.value, $scope);
 });
+
+angular.module('exampleApp').controller('ExampleFormController', function($scope){
+   $scope.exampleform = 'Example Form';
+});
