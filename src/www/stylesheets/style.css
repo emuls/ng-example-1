@@ -66,6 +66,42 @@ body{
     padding:10px;
 }
 
+.simpleDate{
+    font-size:1.25em;
+    color:#323232;
+    font-weight:bold;
+}
+
+.simpleDate .month{
+    color:red;
+}
+
+.simpleDate .day{
+    color:darkorange;
+}
+
+.simpleDate .year{
+    color:#cccc00;
+}
+
+.simpleDate .dateTimeSeparator{
+    margin-left:10px;
+    margin-right:10px;
+    color:green;
+}
+
+.simpleDate .hours{
+    color:blue;
+}
+
+.simpleDate .minutes{
+    color:indigo;
+}
+
+.simpleDate .seconds{
+    color:violet;
+}
+
 input.ng-invalid{
     border:1px solid #ff0000;
 }
