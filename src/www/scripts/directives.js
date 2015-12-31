@@ -7,13 +7,13 @@ angular.module('exampleApp').directive('simpleDate', function(){
             date: '=date'
         },
         template: '<p class="simpleDate">' +
-            '<span class="month">{{date.getMonth()+1}}</span>/' +
+            '<span class="month">{{date.getMonth()+1 | numberFixedLen:2}}</span>/' +
             '<span class="day">{{date.getDate()}}</span>/' +
             '<span class="year">{{date.getFullYear()}}</span>' +
             '<span class="dateTimeSeparator">&nbsp;:::&nbsp;</span>' +
-            '<span class="hours">{{date.getHours()}}</span>:' +
-            '<span class="minutes">{{date.getMinutes()}}</span>:' +
-            '<span class="seconds">{{date.getSeconds()}}</span>' +
+            '<span class="hours">{{date.getHours() | numberFixedLen:2}}</span>:' +
+            '<span class="minutes">{{date.getMinutes() | numberFixedLen:2}}</span>:' +
+            '<span class="seconds">{{date.getSeconds() | numberFixedLen:2}}</span>' +
         '</p>'
     }
 

@@ -3,14 +3,14 @@
         <h2>Data Binding Example</h2>
         <div class="exampleContent">
             Name:<input type="text" ng-model="name" />
-            <p>Hello {{name | capitalize}}!</p>
+            <code>Hello {{name | capitalize}}!</code>
         </div>
     </div>
 
     <div class="exampleContainer">
         <h2>$Watch Example</h2>
         <div class="exampleContent">
-            <p>{{clock.now}}</p>
+            <code>{{clock.now}}</code>
         </div>
     </div>
 
@@ -27,9 +27,9 @@
             <select ng-model="expression.selected" ng-options="option.name for option in expression.options track by option.id">
             </select>
             <label>{{<span>{{expression.selected.value}}</span>}}</label>
-            <p>
+            <code>
                 Parsed Expression: {{parsedExpression}}
-            </p>
+            </code>
         </div>
     </div>
 
@@ -43,7 +43,7 @@
                 <textarea ng-model="email.body" style="width:200px;height:75px;" ></textarea>
             </div>
             <label>Preview:</label>
-            <p>{{email.previewText}}</p>
+            <code>{{email.previewText}}</code>
         </div>
     </div>
 </div>
