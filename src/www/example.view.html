@@ -26,7 +26,7 @@
         <div class="exampleContent">
             <select ng-model="expression.selected" ng-options="option.name for option in expression.options track by option.id">
             </select>
-            <label>{{<span>{{expression.selected.value}}</span>}}</label>
+            <small>{{<span>{{expression.selected.value}}</span>}}</small>
             <code>
                 Parsed Expression: {{parsedExpression}}
             </code>
