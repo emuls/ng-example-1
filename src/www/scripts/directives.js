@@ -1,4 +1,4 @@
-angular.module('exampleApp').directive('simpleDate', function(){
+angular.module('exampleApp').directive('rainbowDate', function(){
 
     return {
         restrict: 'E',
@@ -6,7 +6,7 @@ angular.module('exampleApp').directive('simpleDate', function(){
         scope: {
             date: '=date'
         },
-        template: '<p class="simpleDate">' +
+        template: '<p class="rainbowDate">' +
             '<span class="month">{{date.getMonth()+1 | numberFixedLen:2}}</span>/' +
             '<span class="day">{{date.getDate()}}</span>/' +
             '<span class="year">{{date.getFullYear()}}</span>' +

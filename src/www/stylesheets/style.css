@@ -71,39 +71,39 @@ body{
     padding:10px;
 }
 
-.simpleDate{
+.rainbowDate{
     font-size:1.25em;
     color:#323232;
     font-weight:bold;
 }
 
-.simpleDate .month{
+.rainbowDate .month{
     color:red;
 }
 
-.simpleDate .day{
+.rainbowDate .day{
     color:darkorange;
 }
 
-.simpleDate .year{
+.rainbowDate .year{
     color:#cccc00;
 }
 
-.simpleDate .dateTimeSeparator{
+.rainbowDate .dateTimeSeparator{
     margin-left:10px;
     margin-right:10px;
     color:green;
 }
 
-.simpleDate .hours{
+.rainbowDate .hours{
     color:blue;
 }
 
-.simpleDate .minutes{
+.rainbowDate .minutes{
     color:indigo;
 }
 
-.simpleDate .seconds{
+.rainbowDate .seconds{
     color:violet;
 }
 
