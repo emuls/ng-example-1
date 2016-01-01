@@ -40,3 +40,7 @@ angular.module('exampleApp').controller('ExampleController', function($scope, $t
 angular.module('exampleApp').controller('ExampleFormController', function($scope){
    $scope.exampleform = 'Example Form';
 });
+
+angular.module('exampleApp').controller('BuiltInDirectiveController', function($scope){
+    $scope.show = {thisThat:true};
+})

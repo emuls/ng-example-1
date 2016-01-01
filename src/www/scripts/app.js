@@ -12,6 +12,9 @@ angular.module('exampleApp').config(function($routeProvider) {
         .when('/formexample', {
             templateUrl: 'exampleform.view.html',
             controller: 'ExampleFormController'
+        }).when('/builtin',{
+            templateUrl: 'builtindirectives.view.html',
+            controller: 'BuiltInDirectiveController'
         }).otherwise({
             redirectTo: '/example'
         })

@@ -1,0 +1,20 @@
+<div id="builtindirectives" class="exampleView">
+    <div class="exampleContainer" id="ngShowExample">
+        <h2>ng-show</h2>
+        <div class="exampleContent">
+            <table>
+                <tr>
+                    <th>This</th>
+                    <th>Swap</th>
+                    <th>That</th>
+                </tr>
+                <tr>
+                    <td><div id="showThis" ng-show="show.thisThat" >THIS!</div></td>
+                    <td><button id="showSwapper" ng-click="show.thisThat=!show.thisThat">{{show.thisThat ? 'THAT >>' : '<< THIS'}}</button></td>
+                    <td><div id="showThat" ng-show="!show.thisThat" >THAT!</div></td>
+                </tr>
+            </table>
+        </div>
+        <br style="clear:both"/>
+    </div>
+</div>

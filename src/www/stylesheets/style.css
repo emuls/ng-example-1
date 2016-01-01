@@ -110,3 +110,8 @@ body{
 input.ng-invalid{
     border:1px solid #ff0000;
 }
+
+#ngShowExample th, #ngShowExample td{
+    width:70px;
+    text-align:center;
+}
