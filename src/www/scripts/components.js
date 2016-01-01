@@ -1,5 +1,4 @@
 angular.module('exampleApp').directive('rainbowDate', function(){
-
     return {
         restrict: 'E',
         replace: true,
