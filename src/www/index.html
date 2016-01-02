@@ -21,16 +21,20 @@
                     <md-toolbar class="md-theme-indigo">
                         <h1 class="md-toolbar-tools">Menu</h1>
                     </md-toolbar>
-                    <a href="/#/example">Basic Examples</a>
-                    <a href="/#/builtin">Built-In Directives</a>
-                    <a href="/#/formexample">Form Example</a>
+                    <md-content>
+                        <div ng-repeat="link in links">
+                            <div class="navlink">
+                                <a href="/#{{link.route}}" ng-click="toggleNav();">{{link.text}}</a>
+                            </div>
+                        </div>
+                    </md-content>
                 </md-sidenav>
 
                 <div flex="">
                     <md-toolbar id="appHeader" class="md-theme-red">
                         <h1 class="md-toolbar-tools">
                             <span href="#menubutton" class="gradient-menu" ng-click="toggleNav()" ng-hide="$mdMedia('gt-md')">&nbsp;</span>
-                            Angular Examples
+                            {{TitleService.title}}
                         </h1>
                     </md-toolbar>
                     <md-content id="mainView" layout-padding ng-view></md-content>

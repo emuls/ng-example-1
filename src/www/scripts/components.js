@@ -4,9 +4,9 @@ angular.module('exampleApp').directive('basicExamples', function(){
         replace: true,
         templateUrl:'/components/root/basicexamples.view.html',
         controllerAs:'basic',
-        controller: function($scope, $timeout, $parse, EmailParser){
+        controller: function($scope, $timeout, $parse, EmailParser, TitleService){
             var self = this;
-            self.title = 'Basic Examples';
+            TitleService.title = 'Basic Examples';
             self.name = 'world';
             self.clock = {};
             self.expression = {value:'', options:[
@@ -54,8 +54,8 @@ angular.module('exampleApp').directive('formExample', function(){
        replace: true,
        templateUrl:'/components/root/formexample.view.html',
        controllerAs:'formexample',
-       controller: function(){
-           this.title = 'Form Example';
+       controller: function(TitleService){
+           TitleService.title = 'Form Example';
        }
    }
 
@@ -67,8 +67,8 @@ angular.module('exampleApp').directive('builtinExample', function(){
         replace: true,
         templateUrl:'/components/root/builtinexample.view.html',
         controllerAs:'builtin',
-        controller:function(){
-            this.title = "Built-in Directive Examples"
+        controller:function(TitleService){
+            TitleService.title = "Built-in Directive Examples"
             this.thisThat = true;
         }
     }

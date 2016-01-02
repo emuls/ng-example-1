@@ -1,10 +1,28 @@
 angular.module('exampleApp', ['ngMaterial','ngRoute','services']);
 
-angular.module('exampleApp').controller('AppController', function($scope, $mdSidenav,$mdMedia){
+angular.module('exampleApp').controller('AppController', function($scope, $mdSidenav,$mdMedia, TitleService){
     $scope.$mdMedia = $mdMedia;
+    $scope.TitleService = TitleService;
     $scope.toggleNav = function (){
         $mdSidenav('leftnav').toggle();
     }
+    $scope.links = [
+        {
+            id: 0,
+            text: 'Basic Examples',
+            route: '/example'
+        },
+        {
+            id: 1,
+            text: 'Builtin Examples',
+            route: '/builtin'
+        },
+        {
+            id: 2,
+            text: 'Form Examples',
+            route: '/formexample'
+        },
+    ]
 
 });
 
