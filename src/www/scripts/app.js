@@ -6,24 +6,6 @@ angular.module('exampleApp').controller('AppController', function($scope, $mdSid
     $scope.toggleNav = function (){
         $mdSidenav('leftnav').toggle();
     }
-    $scope.links = [
-        {
-            id: 0,
-            text: 'Basic Examples',
-            route: '/example'
-        },
-        {
-            id: 1,
-            text: 'Builtin Examples',
-            route: '/builtin'
-        },
-        {
-            id: 2,
-            text: 'Form Examples',
-            route: '/formexample'
-        },
-    ]
-
 });
 
 angular.module('exampleApp').config(function($mdThemingProvider) {

@@ -91,5 +91,32 @@ angular.module('exampleApp').directive('rainbowDate', function(){
             '<span class="seconds">{{date.getSeconds() | numberFixedLen:2}}</span>' +
         '</p>'
     }
+});
 
+angular.module('exampleApp').directive('navigation', function(){
+    return {
+        restrict: 'E',
+        replace: true,
+        templateUrl: '/components/navigation/navigation.view.html',
+        controllerAs:'nav',
+        controller: function(){
+            this.links = [
+                {
+                    id: 0,
+                    text: 'Basic Examples',
+                    route: '/example'
+                },
+                {
+                    id: 1,
+                    text: 'Builtin Directive Examples',
+                    route: '/builtin'
+                },
+                {
+                    id: 2,
+                    text: 'Form Examples',
+                    route: '/formexample'
+                }
+            ]
+        }
+    }
 });

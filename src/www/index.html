@@ -22,11 +22,7 @@
                         <h1 class="md-toolbar-tools">Menu</h1>
                     </md-toolbar>
                     <md-content>
-                        <div ng-repeat="link in links">
-                            <div class="navlink">
-                                <a href="/#{{link.route}}" ng-click="toggleNav();">{{link.text}}</a>
-                            </div>
-                        </div>
+                        <navigation></navigation>
                     </md-content>
                 </md-sidenav>
 
