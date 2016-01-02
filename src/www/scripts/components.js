@@ -15,7 +15,7 @@ angular.module('exampleApp').directive('basicExamples', function(){
             ]};
             self.expression.selected = self.expression.options[0];
             self.parsedExpression = '';
-            self.email = {
+            this.email = {
                 to: 'test@example.com',
                 body: 'My email to: {{to}}',
                 previewText : ''
@@ -36,13 +36,13 @@ angular.module('exampleApp').directive('basicExamples', function(){
             updateClock();
             evaluateExpression(self.expression.selected.value);
 
-            $scope.$watch(function(){return self.expression.selected}, function(newVal, oldVal, scope){
+            $scope.$watch('basic.expression.selected', function(newVal, oldVal, scope){
                 if(newVal!==oldVal){
                     evaluateExpression(newVal.value, scope);
                 }
             });
-            $scope.$watchGroup([function(){return self.email.to},function(){return self.email.body}], function(newValues, oldValues, scope){
-                self.email.previewText = EmailParser.parse(newValues[0], {to: newValues[1]});
+            $scope.$watchGroup(['basic.email.to','basic.email.body'], function(newValues, oldValues, scope){
+                self.email.previewText = EmailParser.parse(newValues[1], {to: newValues[0]});
             });
         }
     }
