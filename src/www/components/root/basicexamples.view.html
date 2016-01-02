@@ -1,34 +1,35 @@
 <div id="exampleView" class="exampleView">
+    <h1>{{basic.title}}</h1>
     <div class="exampleContainer">
         <h2>Data Binding Example</h2>
         <div class="exampleContent">
-            Name:<input type="text" ng-model="name" />
-            <code>Hello {{name | capitalize}}!</code>
+            Name:<input type="text" ng-model="basic.name" />
+            <code>Hello {{basic.name | capitalize}}!</code>
         </div>
     </div>
 
     <div class="exampleContainer">
         <h2>$Watch Example</h2>
         <div class="exampleContent">
-            <code>{{clock.now}}</code>
+            <code>{{basic.clock.now}}</code>
         </div>
     </div>
 
     <div class="exampleContainer">
         <h2>Date $Directive Example</h2>
         <div class="exampleContent">
-            <rainbow-date date="clock.now"></rainbow-date>
+            <rainbow-date date="basic.clock.now"></rainbow-date>
         </div>
     </div>
 
     <div class="exampleContainer">
         <h2>$Parse Example</h2>
         <div class="exampleContent">
-            <select ng-model="expression.selected" ng-options="option.name for option in expression.options track by option.id">
+            <select ng-model="basic.expression.selected" ng-options="option.name for option in basic.expression.options track by option.id">
             </select>
-            <small>{{<span>{{expression.selected.value}}</span>}}</small>
+            <small>{{<span>{{basic.expression.selected.value}}</span>}}</small>
             <code>
-                Parsed Expression: {{parsedExpression}}
+                Parsed Expression: {{basic.parsedExpression}}
             </code>
         </div>
     </div>
@@ -37,13 +38,13 @@
         <h2>$Interpolate Example</h2>
         <div class="exampleContent">
             <div>
-                <input type="email" ng-model="email.to" />
+                <input type="email" ng-model="basic.email.to" />
             </div>
             <div>
-                <textarea ng-model="email.body" style="width:200px;height:75px;" ></textarea>
+                <textarea ng-model="basic.email.body" style="width:200px;height:75px;" ></textarea>
             </div>
             <label>Preview:</label>
-            <code>{{email.previewText}}</code>
+            <code>{{basic.email.previewText}}</code>
         </div>
     </div>
 </div>

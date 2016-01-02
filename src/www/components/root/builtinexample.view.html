@@ -1,4 +1,5 @@
 <div id="builtindirectives" class="exampleView">
+    <h1>{{builtin.title}}</h1>
     <div class="exampleContainer" id="ngShowExample">
         <h2>ng-show</h2>
         <div class="exampleContent">
@@ -9,9 +10,9 @@
                     <th>That</th>
                 </tr>
                 <tr>
-                    <td><div id="showThis" ng-show="show.thisThat" >THIS!</div></td>
-                    <td><button id="showSwapper" ng-click="show.thisThat=!show.thisThat">{{show.thisThat ? 'THAT >>' : '<< THIS'}}</button></td>
-                    <td><div id="showThat" ng-show="!show.thisThat" >THAT!</div></td>
+                    <td><div id="showThis" ng-show="builtin.thisThat" >THIS!</div></td>
+                    <td><button id="showSwapper" ng-click="builtin.thisThat=!builtin.thisThat">{{builtin.thisThat ? 'THAT >>' : '<< THIS'}}</button></td>
+                    <td><div id="showThat" ng-show="!builtin.thisThat" >THAT!</div></td>
                 </tr>
             </table>
         </div>

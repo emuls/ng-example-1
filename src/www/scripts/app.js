@@ -3,14 +3,11 @@ angular.module('exampleApp', ['ngRoute','services']);
 angular.module('exampleApp').config(function($routeProvider) {
     $routeProvider
         .when('/example', {
-            templateUrl: '/components/example.view.html',
-            controller: 'ExampleController',
+            template: '<basic-examples></basic-examples>',
         }).when('/formexample', {
-            templateUrl: '/components/exampleform.view.html',
-            controller: 'ExampleFormController'
+            template: '<form-example></form-example>'
         }).when('/builtin',{
-            templateUrl: '/components/builtindirectives.view.html',
-            controller: 'BuiltInDirectiveController'
+            template: '<builtin-example></builtin-example>'
         }).otherwise({
             redirectTo: '/example'
         })
