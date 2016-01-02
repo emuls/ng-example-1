@@ -1,59 +1,71 @@
 <div id="exampleView" class="exampleView">
     <h1>{{basic.title}}</h1>
-    <md-card flex="30">
-        <md-card-header>
-            <md-card-header-text>
-                <span class="md-title">Data Binding Example</span>
-            </md-card-header-text>
-        </md-card-header>
-        <div class="exampleContainer">
+    <div layout="row">
+        <md-card flex="30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Data Binding Example</span>
+                </md-card-header-text>
+            </md-card-header>
+            <div class="exampleContainer">
+                <div class="exampleContent">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="text" ng-model="basic.name"/>
+                    </md-input-container>
+                    <code>Hello {{basic.name | capitalize}}!</code>
+                </div>
+            </div>
+        </md-card>
+
+        <md-card flex="30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">$Watch+Directive Example</span>
+                </md-card-header-text>
+            </md-card-header>
+
             <div class="exampleContent">
-                <md-input-container>
-                    <label>Name</label>
-                    <input type="text" ng-model="basic.name" />
-                </md-input-container>
-                <code>Hello {{basic.name | capitalize}}!</code>
+                <rainbow-date date="basic.clock.now"></rainbow-date>
+                <code>
+                    Current Time: {{basic.clock.now}}
+                </code>
             </div>
-        </div>
-    </md-card>
-
-    <div class="exampleContainer">
-        <h2>$Watch Example</h2>
-        <div class="exampleContent">
-            <code>{{basic.clock.now}}</code>
-        </div>
-    </div>
-
-    <div class="exampleContainer">
-        <h2>Date $Directive Example</h2>
-        <div class="exampleContent">
-            <rainbow-date date="basic.clock.now"></rainbow-date>
-        </div>
-    </div>
-
-    <div class="exampleContainer">
-        <h2>$Parse Example</h2>
-        <div class="exampleContent">
-            <select ng-model="basic.expression.selected" ng-options="option.name for option in basic.expression.options track by option.id">
-            </select>
-            <small>{{<span>{{basic.expression.selected.value}}</span>}}</small>
-            <code>
-                Parsed Expression: {{basic.parsedExpression}}
-            </code>
-        </div>
-    </div>
-
-    <div class="exampleContainer">
-        <h2>$Interpolate Example</h2>
-        <div class="exampleContent">
-            <div>
-                <input type="email" ng-model="basic.email.to" />
+        </md-card>
+        <md-card flex="30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">$Parse Example</span>
+                </md-card-header-text>
+            </md-card-header>
+            <div class="exampleContent">
+                <select ng-model="basic.expression.selected"
+                        ng-options="option.name for option in basic.expression.options track by option.id">
+                </select>
+                <small>{{<span>{{basic.expression.selected.value}}</span>}}</small>
+                <code>
+                    Parsed Expression: {{basic.parsedExpression}}
+                </code>
             </div>
-            <div>
-                <textarea ng-model="basic.email.body" style="width:200px;height:75px;" ></textarea>
+        </md-card>
+    </div>
+    <div layout="row">
+        <md-card flex="30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">$Interpolate Example</span>
+                </md-card-header-text>
+            </md-card-header>
+            <div class="exampleContent">
+                <div>
+                    <input type="email" ng-model="basic.email.to"/>
+                </div>
+                <div>
+                    <textarea ng-model="basic.email.body" style="width:200px;height:75px;"></textarea>
+                </div>
+                <label>Preview:</label>
+                <code>{{basic.email.previewText}}</code>
             </div>
-            <label>Preview:</label>
-            <code>{{basic.email.previewText}}</code>
-        </div>
+        </md-card>
     </div>
 </div>
