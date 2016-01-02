@@ -27,7 +27,7 @@ body{
 
 .exampleContent code{
     display:block;
-    margin:5px;
+    margin:5px 5px 26px 5px;
 }
 
 .exampleContent h4, .exampleContent code{
