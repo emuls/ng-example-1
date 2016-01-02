@@ -15,6 +15,11 @@
                     <td><div id="showThat" ng-show="!builtin.thisThat" >THAT!</div></td>
                 </tr>
             </table>
+            <div ng-switch on="builtin.thisThat">
+                <label>ng-switch</label>
+                <h4 ng-switch-when="true">THIS IS THIS</h4>
+                <h4 ng-switch-when="false">THAT IS THAT</h4>
+            </div>
         </div>
         <br style="clear:both"/>
     </div>
