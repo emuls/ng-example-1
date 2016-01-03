@@ -1,85 +1,50 @@
 <div id="exampleView" class="exampleView">
     <div layout="row">
-        <md-card flex="30">
-            <md-card-header>
-                <md-font-icon>$</md-font-icon>
-                <md-card-header-text>
-                    <span class="md-title">Data Binding Example</span>
-                </md-card-header-text>
-            </md-card-header>
-            <div class="exampleContainer">
-                <div class="exampleContent">
-                    <md-input-container>
-                        <label>Name</label>
-                        <input type="text" ng-model="basic.name"/>
-                    </md-input-container>
-                    <code>Hello {{basic.name | capitalize}}!</code>
-                </div>
-            </div>
-        </md-card>
+        <example-card title="Data Binding Example">
+            <md-input-container>
+                <label>Name</label>
+                <input type="text" ng-model="basic.name"/>
+            </md-input-container>
+            <code>Hello {{basic.name | capitalize}}!</code>
+        </example-card>
 
-        <md-card flex="30">
-            <md-card-header>
-                <md-card-header-text>
-                    <span class="md-title">$Watch+Directive Example</span>
-                </md-card-header-text>
-            </md-card-header>
-
-            <div class="exampleContent">
-                <rainbow-date date="basic.clock.now"></rainbow-date>
-                <code>
-                    Current Time: {{basic.clock.now}}
-                </code>
-            </div>
-        </md-card>
-        <md-card flex="30">
-            <md-card-header>
-                <md-card-header-text>
-                    <span class="md-title">$Parse Example</span>
-                </md-card-header-text>
-            </md-card-header>
-            <div class="exampleContent">
-                <select ng-model="basic.expression.selected"
-                        ng-options="option.name for option in basic.expression.options track by option.id">
-                </select>
-                <small>{{<span>{{basic.expression.selected.value}}</span>}}</small>
-                <code>
-                    Parsed Expression: {{basic.parsedExpression}}
-                </code>
-            </div>
-        </md-card>
+        <example-card title="$Watch+Directive Example">
+            <rainbow-date date="basic.clock.now"></rainbow-date>
+            <code>
+                Current Time: {{basic.clock.now}}
+            </code>
+        </example-card>
+        <example-card title="$Parse Example">
+            <select ng-model="basic.expression.selected"
+                    ng-options="option.name for option in basic.expression.options track by option.id">
+            </select>
+            <small>{{<span>{{basic.expression.selected.value}}</span>}}</small>
+            <code>
+                Parsed Expression: {{basic.parsedExpression}}
+            </code>
+        </example-card>
     </div>
     <div layout="row">
-        <md-card flex="30">
-            <md-card-header>
-                <md-card-header-text>
-                    <span class="md-title">$Interpolate Example</span>
-                </md-card-header-text>
-            </md-card-header>
-            <div class="exampleContent">
-                <div>
-                    <input type="email" ng-model="basic.email.to"/>
-                </div>
-                <div>
-                    <textarea ng-model="basic.email.body" style="width:200px;height:75px;"></textarea>
-                </div>
-                <label>Preview:</label>
-                <code>{{basic.email.previewText}}</code>
+        <example-card title="$Interpolate Example">
+            <div>
+                <input type="email" ng-model="basic.email.to"/>
             </div>
-        </md-card>
-        <md-card flex="30">
-            <md-card-header>
-                <md-card-header-text>
-                    <span class="md-title">Priority + Terminal + Transclude Example</span>
-                </md-card-header-text>
-            </md-card-header>
-            <div class="exampleContent">
-                <div make-red>I am red (priority: 100)</div>
-                <div make-green>I am green (priority: 99)</div>
-                <div make-red make-green>I am the highest priority, which is red</div>
-                <hr />
-                <transclude-red>Transclude red</transclude-red>
+            <div>
+                <textarea ng-model="basic.email.body" style="width:200px;height:75px;"></textarea>
             </div>
-        </md-card>
+            <label>Preview:</label>
+            <code>{{basic.email.previewText}}</code>
+        </example-card>
+        <example-card title="Priority + Terminal + Transclude Example">
+            <div make-red>I am red (priority: 100, terminal)</div>
+            <div make-green>I am green (priority: 99, terminal)</div>
+            <div make-red make-green>I am the highest priority, because we are terminal</div>
+            <hr />
+            <transclude-blue>Element Transclude</transclude-blue>
+            <div transclude-blue>Attribute Transclude</div>
+        </example-card>
+        <example-card title="ng-click + ng-class + $timeout">
+            <contest-click-example></contest-click-example>
+        </example-card>
     </div>
 </div>

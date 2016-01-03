@@ -125,3 +125,7 @@ input.ng-invalid{
             white 80%, white 100%
     );
 }
+
+.horizontal-cards md-card{
+    float:left;
+}

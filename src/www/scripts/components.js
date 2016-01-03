@@ -1,4 +1,16 @@
 
+angular.module('exampleApp').directive('exampleCard', function(){
+   return {
+       restrict: 'E',
+       replace: true,
+       scope:{
+           title:'@'
+       },
+       templateUrl:'/components/directives/examplecard.view.html',
+       transclude:true
+   }
+});
+
 angular.module('exampleApp').directive('rainbowDate', function(){
     return {
         restrict: 'E',
@@ -50,13 +62,26 @@ angular.module('exampleApp').directive('makeRed', function(){
     }
 });
 
-angular.module('exampleApp').directive('transcludeRed', function(){
+angular.module('exampleApp').directive('transcludeBlue', function(){
     return {
-        restrict: 'E',
+        restrict: 'EA',
         priority: 101,
-        scope: true, //must be isolated, {}, or set to true
+        replace:false,
+        scope: {}, //must be isolated, {}, or set to true
         transclude:true,
-        template:'<div style="color:red !important" ng-transclude></div>'
+        template:'<div style="color:blue" ng-transclude></div>'
+    }
+});
+
+angular.module('exampleApp').directive('contestClickExample', function(){
+    return {
+        restrict: 'A',
+        scope: {},
+        templateUrl:'/components/directives/clickexample.view.html',
+        controllerAs:'clicky',
+        controller:function(){
+            alert('here');
+        }
     }
 });
 
