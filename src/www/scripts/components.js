@@ -73,15 +73,13 @@ angular.module('exampleApp').directive('transcludeBlue', function(){
     }
 });
 
-angular.module('exampleApp').directive('contestClickExample', function(){
+angular.module('exampleApp').directive('contestExample', function(){
     return {
-        restrict: 'A',
-        scope: {},
+        restrict: 'E',
+        replace: true,
+        scope:true,
         templateUrl:'/components/directives/clickexample.view.html',
-        controllerAs:'clicky',
-        controller:function(){
-            alert('here');
-        }
+        transclude:true
     }
 });
 
