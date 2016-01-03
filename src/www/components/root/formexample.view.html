@@ -1,4 +1,24 @@
 <div id="exampleForm" class="exampleView">
+    <div layout="row">
+        <md-card flex="30">
+            <md-card-header>
+                <md-font-icon>$</md-font-icon>
+                <md-card-header-text>
+                    <span class="md-title">Data Binding Example</span>
+                </md-card-header-text>
+            </md-card-header>
+            <div class="exampleContainer">
+                <div class="exampleContent">
+                    <md-input-container>
+                        <label>Name</label>
+                        <input type="text" ng-model="basic.name"/>
+                    </md-input-container>
+                    <code>Hello {{basic.name | capitalize}}!</code>
+                </div>
+            </div>
+        </md-card>
+    </div>
+
     <form name="exampleForm" novalidate>
         <div class="formField">
             <label name="catsName">Cat's Name</label>
