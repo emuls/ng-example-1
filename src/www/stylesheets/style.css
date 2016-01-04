@@ -144,6 +144,12 @@ input.ng-invalid{
     margin-top:3px;
 }
 
+md-card-header{
+    background:#880000;
+    color:#fff;
+    margin-bottom:10px;
+}
+
 .navLink{
     padding: 5px 10px 5px 10px;
     font-size:1.25em;
