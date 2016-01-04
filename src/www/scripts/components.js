@@ -77,9 +77,24 @@ angular.module('exampleApp').directive('contestExample', function(){
     return {
         restrict: 'E',
         replace: true,
-        scope:true,
-        templateUrl:'/components/directives/clickexample.view.html',
-        transclude:true
+        templateUrl:'/components/directives/clickcontestexample.view.html',
+        controllerAs:'contest',
+        controller:function($timeout){
+            var self = this;
+            this.rolling=false;
+            this.dice=4;
+            this.reroll = function(){
+                this.rolling = true;
+                $timeout(function(){
+                    self.rolling = false;
+                    self.dice = getRandomArbitrary(1,6);
+                }, 1500)
+            }
+
+            function getRandomArbitrary(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+        }
     }
 });
 

@@ -1,0 +1,10 @@
+<div id="clickContest" ng-click="contest.reroll()" ng-switch="contest.rolling">
+    <div ng-switch-when="false">
+        <h1 ng-class="{clickWinner: contest.dice>3, clickLoser: contest.dice<=3}">You are a {{contest.dice>3 ? 'WINNER!!!' : 'LOSER!'}}</h1>
+        <small>(Click to try again)</small>
+    </div>
+    <div ng-switch-when="true">
+        <h1>Rolling Dice!</h1>
+        <small>Please Wait...</small>
+    </div>
+</div>
