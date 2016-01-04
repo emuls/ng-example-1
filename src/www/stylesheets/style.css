@@ -139,3 +139,24 @@ input.ng-invalid{
 #clickContest .clickLoser{
     color:red;
 }
+
+#navigationContainer{
+    margin-top:3px;
+}
+
+.navLink{
+    padding: 5px 10px 5px 10px;
+    font-size:1.25em;
+    width:100%
+}
+
+.navlink:hover{
+    background:#eee;
+}
+
+.navlink a{
+    color:#000;
+    width:100%;
+    display:block;
+    text-decoration:none;
+}

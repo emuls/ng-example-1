@@ -23,12 +23,12 @@ angular.module('exampleApp').directive('navigation', function(){
                 },
                 {
                     id: 1,
-                    text: 'Builtin Directive Examples',
+                    text: 'Built-in Directive Examples',
                     route: '/builtin'
                 },
                 {
                     id: 2,
-                    text: 'Form Examples',
+                    text: 'Form Example',
                     route: '/formexample'
                 }
             ]
