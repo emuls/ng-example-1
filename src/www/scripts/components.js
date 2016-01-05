@@ -79,11 +79,11 @@ angular.module('exampleApp').directive('contestExample', function(){
                 this.rolling = true;
                 $timeout(function(){
                     self.rolling = false;
-                    self.dice = this.getRandomArbitrary(1,6);
+                    self.dice = self.RNG(1,6);
                 }, 1500)
             };
 
-            this.getRandomArbitrary = function(min, max) {
+            this.RNG = function(min, max) {
                 return Math.random() * (max - min) + min;
             };
         }
