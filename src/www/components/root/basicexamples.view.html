@@ -49,13 +49,14 @@
     </div>
     <div layout="row" ng-controller="ScopeExampleController">
         <example-card title="scope:true Directive">
-            <true-scope></true-scope>
+            <button ng-click="changePropTwo()">Change Prop Two</button>
+            <true-scope controller-property-two="controllerPropertyTwo"></true-scope>
         </example-card>
         <example-card title="No-scope-property Directive">
-            <no-scope></no-scope>
+            <no-scope controller-property-two="controllerPropertyTwo"></no-scope>
         </example-card>
         <example-card title="scope:{} Directive">
-            <isolate-scope></isolate-scope>
+            <isolate-scope controller-property-two="controllerPropertyTwo"></isolate-scope>
         </example-card>
     </div>
 </div>
