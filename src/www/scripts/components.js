@@ -30,14 +30,6 @@ angular.module('exampleApp').directive('rainbowDate', function(){
     }
 });
 
-angular.module('exampleApp').directive('inheritedScope', function(){
-
-});
-
-angular.module('exampleApp').directive('isolateScope', function(){
-
-});
-
 angular.module('exampleApp').directive('makeGreen', function(){
     return {
         restrict: 'A',
@@ -87,14 +79,50 @@ angular.module('exampleApp').directive('contestExample', function(){
                 this.rolling = true;
                 $timeout(function(){
                     self.rolling = false;
-                    self.dice = getRandomArbitrary(1,6);
+                    self.dice = this.getRandomArbitrary(1,6);
                 }, 1500)
-            }
+            };
 
-            function getRandomArbitrary(min, max) {
+            this.getRandomArbitrary = function(min, max) {
                 return Math.random() * (max - min) + min;
-            }
+            };
         }
     }
+});
+
+angular.module('exampleApp').directive('trueScope', function(){
+    return{
+        restrict: 'E',
+        scope:true,
+        template:'<div>' +
+        '<p>This directive has a scope:true property and inherits it\'s scope prototypically as a result</p>' +
+        '<h4>{{controllerProperty}}</h4>' +
+        '</div>'
+    };
+});
+
+angular.module('exampleApp').directive('noScope', function(){
+    return{
+        restrict: 'E',
+        template:'<div>' +
+        '<p>This directive does not have a scope property and inherits prototypically as a result</p>' +
+        '<h4>{{controllerProperty}}</h4>' +
+        '</div>'
+    };
+});
+
+angular.module('exampleApp').directive('isolateScope', function(){
+    return{
+        restrict: 'E',
+        scope:{},
+        template:'<div>' +
+            '<p>This directive sets it\'s scope property and thus does not inherit, the example controller property should not appear below</p>' +
+            '<h4>{{controllerProperty}}</h4>' +
+        '</div>'
+    };
+});
+
+angular.module('exampleApp').controller('ScopeExampleController', function($scope){
+    $scope.controllerProperty = 'Controller Property';
 });
 
