@@ -36,7 +36,7 @@ angular.module('exampleApp').directive('makeGreen', function(){
         replace: false,
         priority: 99,
         terminal: true,
-        link: function($scope, element, attrs){
+        compile: function(element, attrs, fTransclude){
             element.css({"color":"green"})
         }
     }
@@ -48,7 +48,7 @@ angular.module('exampleApp').directive('makeRed', function(){
         replace: false,
         priority: 100,
         terminal: true,
-        link: function($scope, element, attrs){
+        compile: function(element, attrs, fTransclude){
             element.css({"color":"red"})
         }
     }
