@@ -11,6 +11,17 @@ angular.module('exampleApp').directive('exampleCard', function(){
    }
 });
 
+angular.module('exampleApp').directive('carBlurb', function(){
+    return {
+        restrict: 'E',
+        replace: false,
+        scope:{
+            car:'='
+        },
+        templateUrl:'/components/directives/carblurb.view.html'
+    }
+});
+
 angular.module('exampleApp').directive('rainbowDate', function(){
     return {
         restrict: 'E',

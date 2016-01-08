@@ -30,6 +30,11 @@ angular.module('exampleApp').directive('navigation', function(){
                     id: 2,
                     text: 'Form Example',
                     route: '/formexample'
+                },
+                {
+                    id: 3,
+                    text: 'Http Example',
+                    route: '/httpexample'
                 }
             ]
         }
@@ -49,8 +54,10 @@ angular.module('exampleApp').config(function($routeProvider) {
             template: '<form-example></form-example>'
         }).when('/builtin',{
             template: '<builtin-example></builtin-example>'
+        }).when('/httpexample', {
+            template: '<http-example></http-example>'
         }).otherwise({
-            redirectTo: '/example'
-        })
+                redirectTo: '/example'
+        });
 });
 

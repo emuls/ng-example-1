@@ -1,4 +1,4 @@
-angular.module('services', []);
+angular.module('services', ['ngResource']);
 
 angular.module('services').service('EmailParser',function($interpolate){
     return {
@@ -8,6 +8,10 @@ angular.module('services').service('EmailParser',function($interpolate){
         }
     }
 });
+
+angular.module('services').factory('APIService', ['$resource', function($resource){
+    return $resource('/api/:id');
+}]);
 
 angular.module('services').service('TitleService', function(){
     return {

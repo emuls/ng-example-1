@@ -48,6 +48,24 @@ angular.module('exampleApp').directive('basicExamples', function(){
     }
 });
 
+angular.module('exampleApp').directive('httpExample', function(){
+    return {
+        restrict : 'E',
+        replace: true,
+        templateUrl: '/components/root/httpexample.view.html',
+        controllerAs:'httpexample',
+        controller: function($http, TitleService, APIService){
+            var self = this;
+            self.cars = [];
+            var carsRequest = APIService.get({ id: 'cars' }, function() {
+                self.cars = carsRequest.cars;
+            });
+            TitleService.title = '$http Example'
+
+        }
+    }
+});
+
 angular.module('exampleApp').directive('formExample', function(){
     return {
         restrict : 'E',
