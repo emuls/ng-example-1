@@ -1,6 +1,6 @@
 <div id="exampleView" class="exampleView">
     <div layout="row">
-        <example-card title="Data Binding Example">
+        <example-card flex="" title="Data Binding Example">
             <md-input-container>
                 <label>Name</label>
                 <input type="text" ng-model="basic.name"/>
@@ -8,13 +8,13 @@
             <code>Hello {{basic.name | capitalize}}!</code>
         </example-card>
 
-        <example-card title="$Watch+Directive Example">
+        <example-card flex="" title="$Watch+Directive Example">
             <rainbow-date date="basic.clock.now"></rainbow-date>
             <code>
                 Current Time: {{basic.clock.now}}
             </code>
         </example-card>
-        <example-card title="$Parse Example">
+        <example-card flex="" title="$Parse Example">
             <select ng-model="basic.expression.selected"
                     ng-options="option.name for option in basic.expression.options track by option.id">
             </select>
@@ -25,7 +25,7 @@
         </example-card>
     </div>
     <div layout="row">
-        <example-card title="$Interpolate Example">
+        <example-card flex="" title="$Interpolate Example">
             <div>
                 <input type="email" ng-model="basic.email.to"/>
             </div>
@@ -35,7 +35,7 @@
             <label>Preview:</label>
             <code>{{basic.email.previewText}}</code>
         </example-card>
-        <example-card title="Priority + Terminal + Transclude Example">
+        <example-card flex="" title="Priority + Terminal + Transclude Example">
             <div make-red>I am red (priority: 100, terminal)</div>
             <div make-green>I am green (priority: 99, terminal)</div>
             <div make-red make-green>I am the highest priority, because we are terminal</div>
@@ -48,7 +48,7 @@
         </example-card>
     </div>
     <div layout="row" ng-controller="ScopeExampleController">
-        <example-card title="scope:true Directive">
+        <example-card flex="" title="scope:true Directive">
             <button ng-click="changePropTwo()">Change Prop Two</button>
             <true-scope controller-property-two="controllerPropertyTwo"></true-scope>
         </example-card>

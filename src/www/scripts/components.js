@@ -2,7 +2,6 @@
 angular.module('exampleApp').directive('exampleCard', function(){
    return {
        restrict: 'E',
-       replace: true,
        scope:{
            title:'@'
        },

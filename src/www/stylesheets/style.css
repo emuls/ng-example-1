@@ -135,7 +135,7 @@ md-card-header {
 .navLink:hover a {
   text-decoration: underline;
 }
-#httpExample md-card {
+#httpExample #car-http-example example-card {
   width: 30%;
   margin: 10px;
   float: left;
