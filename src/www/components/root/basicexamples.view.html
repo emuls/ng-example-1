@@ -59,4 +59,25 @@
             <isolate-scope controller-property-two="controllerPropertyTwo"></isolate-scope>
         </example-card>
     </div>
+    <div layout="row">
+        <example-card flex="" title="ng-show/switch">
+            <table>
+                <tr><th>This</th><th>Swap</th><th>That</th></tr>
+                <tr>
+                    <td><div id="showThis" ng-show="builtin.thisThat" >THIS!</div></td>
+                    <td><button id="showSwapper" ng-click="builtin.thisThat=!builtin.thisThat">{{builtin.thisThat ? 'THAT >>' : '<< THIS'}}</button></td>
+                    <td><div id="showThat" ng-show="!builtin.thisThat" >THAT!</div></td>
+                </tr>
+            </table>
+            <label>ng-switch</label>
+            <div ng-switch on="builtin.thisThat">
+                <h4 ng-switch-when="true">THIS IS THIS</h4>
+                <h4 ng-switch-when="false">THAT IS THAT</h4>
+            </div>
+        </example-card>
+        <example-card flex="" title="holder">
+        </example-card>
+        <example-card flex="" title="holder">
+        </example-card>
+    </div>
 </div>

@@ -23,16 +23,11 @@ angular.module('exampleApp').directive('navigation', function(){
                 },
                 {
                     id: 1,
-                    text: 'Built-in Directive Examples',
-                    route: '/builtin'
-                },
-                {
-                    id: 2,
                     text: 'Form Example',
                     route: '/formexample'
                 },
                 {
-                    id: 3,
+                    id: 2,
                     text: 'Http Example',
                     route: '/httpexample'
                 }
@@ -52,8 +47,6 @@ angular.module('exampleApp').config(function($routeProvider) {
             template: '<basic-examples></basic-examples>',
         }).when('/formexample', {
             template: '<form-example></form-example>'
-        }).when('/builtin',{
-            template: '<builtin-example></builtin-example>'
         }).when('/httpexample', {
             template: '<http-example></http-example>'
         }).otherwise({

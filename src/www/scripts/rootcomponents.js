@@ -78,16 +78,3 @@ angular.module('exampleApp').directive('formExample', function(){
     }
 
 });
-
-angular.module('exampleApp').directive('builtinExample', function(){
-    return {
-        restrict : 'E',
-        replace: true,
-        templateUrl:'/components/root/builtinexample.view.html',
-        controllerAs:'builtin',
-        controller:function(TitleService){
-            TitleService.title = "Built-in Directive Examples"
-            this.thisThat = true;
-        }
-    }
-});
