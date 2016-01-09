@@ -5,7 +5,7 @@ body{
 
 #appContainer{
   margin:0;
-  h1{
+  >h1{
     float:left;
   }
   >#mainView{
@@ -16,6 +16,16 @@ body{
 
 #appHeader{
   background:#000;
+}
+
+example-card[flex]{
+  display: flex;
+  flex-direction: column;
+  md-card{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
 }
 
 .exampleContainer label{
