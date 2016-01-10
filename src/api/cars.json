@@ -1,25 +1,19 @@
 {
   "cars":[
     {
-      "make": "ford",
-      "model": "taurus",
-      "year": 1996
+      "make": "Ford",
+      "model": "Cougar Thunder Falcon Bird",
+      "year": 3001
     },
     {
-      "make": "toyota",
-      "model": "prius",
+      "make": "Toyota",
+      "model": "Prius",
       "year": 2015
     },
     {
-      "make": "pontiac",
-      "model": "firebird",
+      "make": "Pontiac",
+      "model": "Firebird",
       "year": 1977
-    },
-    {
-      "make": "ford",
-      "model": "cougar thunder falcon bird",
-      "year": 3001
     }
-
   ]
 }

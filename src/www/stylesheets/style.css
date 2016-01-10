@@ -15,6 +15,9 @@ body {
 #appHeader {
   background: #000;
 }
+.mainView {
+  padding-bottom: 40px;
+}
 example-card[flex] {
   display: flex;
   flex-direction: column;

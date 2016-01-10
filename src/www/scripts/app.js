@@ -28,8 +28,8 @@ angular.module('exampleApp').directive('navigation', function(){
                 },
                 {
                     id: 2,
-                    text: 'Http Example',
-                    route: '/httpexample'
+                    text: 'API Example',
+                    route: '/apiexample'
                 }
             ]
         }
@@ -47,8 +47,8 @@ angular.module('exampleApp').config(function($routeProvider) {
             template: '<basic-examples></basic-examples>',
         }).when('/formexample', {
             template: '<form-example></form-example>'
-        }).when('/httpexample', {
-            template: '<http-example></http-example>'
+        }).when('/apiexample', {
+            template: '<api-call-example></api-call-example>'
         }).otherwise({
                 redirectTo: '/example'
         });

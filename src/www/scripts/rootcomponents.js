@@ -48,20 +48,37 @@ angular.module('exampleApp').directive('basicExamples', function(){
     }
 });
 
-angular.module('exampleApp').directive('httpExample', function(){
+angular.module('exampleApp').directive('apiCallExample', function(){
     return {
         restrict : 'E',
         replace: true,
-        templateUrl: '/components/root/httpexample.view.html',
+        templateUrl: '/components/root/apicallexample.view.html',
         controllerAs:'httpexample',
-        controller: function($http, TitleService, APIService){
-            var self = this;
-            self.cars = [];
-            var carsRequest = APIService.get({ id: 'cars' }, function() {
-                self.cars = carsRequest.cars;
-            });
-            TitleService.title = '$http Example'
+        controller: function($http, $q, $timeout, $mdToast, TitleService, APIService){
+            TitleService.title = 'API Example with $resource and $http'
 
+            var self = this;
+            self.loadingCars = true;
+            self.ngresourcecars = [];
+            var carsRequest = APIService.get({ id: 'cars' }, function() {
+                self.ngresourcecars = carsRequest.cars;
+            });
+
+            var httpCarsPromise = $http({
+                method: 'GET',
+                url: '/api/cars'
+            }).then(function successCallback(response) {
+                self.httpcars = response.data.cars;
+            }, function errorCallback(response) {
+                $mdToast.showSimple('Error loading cars via http');
+            });
+
+            $q.all([carsRequest.promise, httpCarsPromise]).then(function(data){
+                $timeout(function(){
+                    $mdToast.showSimple('Cars Loaded!');
+                    self.loadingCars = false;
+                }, 500);
+            });
         }
     }
 });
