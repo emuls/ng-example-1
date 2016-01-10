@@ -5,13 +5,13 @@
         </h2>
         <div ng-switch-default>
             <div layout="row">
-                <example-card id="car-http-example" title="$resource example">
+                <example-card id="car-http-example" title="$resource example (api ordered)">
                     <car-blurb car="car" ng-repeat="car in httpexample.ngresourcecars"></car-blurb>
                 </example-card>
             </div>
             <div layout="row">
-                <example-card id="car-http-example" title="$http example">
-                    <car-blurb car="car" ng-repeat="car in httpexample.httpcars"></car-blurb>
+                <example-card id="car-http-example" title="$http example (order by make)">
+                    <car-blurb car="car" ng-repeat="car in httpexample.httpcars | orderBy:'make':false""></car-blurb>
                 </example-card>
             </div>
         </div>

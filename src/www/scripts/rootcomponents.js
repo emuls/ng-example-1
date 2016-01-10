@@ -55,7 +55,7 @@ angular.module('exampleApp').directive('apiCallExample', function(){
         templateUrl: '/components/root/apicallexample.view.html',
         controllerAs:'httpexample',
         controller: function($http, $q, $timeout, $mdToast, TitleService, APIService){
-            TitleService.title = 'API Example with $resource and $http'
+            TitleService.title = 'API Example with $resource, $http, and $q'
 
             var self = this;
             self.loadingCars = true;
