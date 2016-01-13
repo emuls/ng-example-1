@@ -1,3 +1,5 @@
+angular.module('rootComponents', ['services', 'exFilters']);
+
 !(function(){
     function BasicExamplesDirective(){
         return {
@@ -49,7 +51,7 @@
             self.email.previewText = EmailParser.parse(newValues[1], {to: newValues[0]});
         });
     }
-    angular.module('exampleApp').directive('basicExamples',BasicExamplesDirective);
+    angular.module('rootComponents').directive('basicExamples',BasicExamplesDirective);
 })();
 
 
@@ -91,7 +93,7 @@
         });
     }
 
-    angular.module('exampleApp').directive('apiCallExample', APICallExampleDirective);
+    angular.module('rootComponents').directive('apiCallExample', APICallExampleDirective);
 })();
 
 !(function() {
@@ -109,5 +111,5 @@
         TitleService.title = 'Form Example';
     }
 
-    angular.module('exampleApp').directive('formExample', FormExampleDirective);
+    angular.module('rootComponents').directive('formExample', FormExampleDirective);
 })();

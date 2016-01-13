@@ -1,3 +1,5 @@
+angular.module('exFilters', []);
+
 !(function() {
     function CapitalizeFilter() {
         var filter = function (input) {
@@ -6,7 +8,7 @@
         return filter;
     }
 
-    angular.module('exampleApp').filter('capitalize', CapitalizeFilter);
+    angular.module('exFilters').filter('capitalize', CapitalizeFilter);
 })();
 
 !(function() {
@@ -25,5 +27,5 @@
         };
         return filter;
     }
-    angular.module('exampleApp').filter('numberFixedLen',FixedNumberLengthFilter);
+    angular.module('exFilters').filter('numberFixedLen',FixedNumberLengthFilter);
 })();

@@ -1,4 +1,4 @@
-angular.module('exampleApp', ['ngMaterial','ngRoute','services']);
+angular.module('exampleApp', ['ngMaterial','ngRoute','services','rootComponents']);
 
 !(function(){
     'use strict';
