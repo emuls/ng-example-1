@@ -72,13 +72,15 @@ angular.module('services', ['ngResource']);
                 }
             },
             deregisterListener : function(listener){
-                if(inArray(listeners, listener)){
-                    listeners.remove(listener);
-                    console.log('Removed listener, ' + listeners.length + ' still registered')
-                }
+              for(var i = 0; i < listeners.length; i++){
+                  if(listeners[i]===listener){
+                      listeners.splice(i, 1);
+                      console.log('Removed listener, ' + listeners.length + ' still registered')
+                      break;
+                  }
+              }
             }
         }
     }
     angular.module('services').service('GithubService', GithubService);
 })();
-

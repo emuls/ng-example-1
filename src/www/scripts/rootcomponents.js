@@ -149,7 +149,7 @@ angular.module('rootComponents', ['services', 'exFilters']);
         GithubService.setUser(self.username);
 
         $scope.$on("$destroy", function() {
-            GithubService.deregisterListener(this);
+            GithubService.deregisterListener(self);
         });
     }
     angular.module('rootComponents').directive('githubExample', GithubExampleDirective);
