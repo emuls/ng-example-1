@@ -1,9 +1,9 @@
 <div id="githubexample" class="exampleView">
     <input type="text" ng-model="githubExample.username"/>
-    <input type="button" ng-click="githubExample.load()" value="GO" />
-    <h2 ng-show="githubExample.loading">Loading Data...</h2>
-    <example-card flex="" title="github events" ng-show="!githubExample.loading">
-        <ul>
+    <input type="button" ng-click="githubExample.setUser()" value="GO" />
+    <example-card flex="" title="github events">
+        <h4 ng-show="githubExample.loading">Loading Data...</h4>
+        <ul ng-show="!githubExample.loading">
             <li ng-repeat="event in githubExample.events">
                 <img ng-src="{{event.actor.avatar_url}}" style="width:30px;height:30px"/> {{event.actor.login}} - {{event.repo.name}}
             </li>

@@ -32,6 +32,8 @@ angular.module('services', ['ngResource']);
 !(function(){
     function GithubService($http){
         var githubURL = 'https://api.github.com';
+        var username = 'emuls';
+        var listeners = [];
 
         function makeRequest(username, path){
             return $http({
@@ -40,9 +42,40 @@ angular.module('services', ['ngResource']);
             });
         }
 
+        function inArray(array, obj){
+            var found = false;
+            for(var i = 0; i < listeners.length; i++){
+                if(listeners[i]===obj){
+                    found = true;
+                }
+            }
+            return found;
+        }
+
         return {
-            events : function(username){
+            getUser : function(){
+                return username;
+            },
+            setUser : function(newUsername) {
+                username = newUsername;
+                for(var i = 0; i < listeners.length; i++){
+                    listeners[i].usernameUpdated();
+                }
+            },
+            events : function(){
                 return makeRequest(username, 'events');
+            },
+            registerListener : function(listener){
+                if(!inArray(listeners, listener)){
+                    listeners.push(listener);
+                    console.log('Added listener, ' + listeners.length + ' now registered')
+                }
+            },
+            deregisterListener : function(listener){
+                if(inArray(listeners, listener)){
+                    listeners.remove(listener);
+                    console.log('Removed listener, ' + listeners.length + ' still registered')
+                }
             }
         }
     }
