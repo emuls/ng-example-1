@@ -32,6 +32,8 @@ angular.module('exampleApp', ['ngMaterial','ngRoute','services','rootComponents'
             template: '<form-example></form-example>'
         }).when('/apiexample', {
             template: '<api-call-example></api-call-example>'
+        }).when('/githubexample', {
+            template: '<github-example></github-example>'
         }).otherwise({
             redirectTo: '/example'
         });
@@ -63,6 +65,11 @@ angular.module('exampleApp', ['ngMaterial','ngRoute','services','rootComponents'
                         id: 2,
                         text: 'API Example',
                         route: '/apiexample'
+                    },
+                    {
+                        id: 3,
+                        text: 'Github API Example',
+                        route: '/githubexample'
                     }
                 ]
             }

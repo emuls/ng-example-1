@@ -4,7 +4,6 @@ angular.module('rootComponents', ['services', 'exFilters']);
     function BasicExamplesDirective(){
         return {
             restrict : 'E',
-            replace: true,
             templateUrl:'/components/root/basicexamples.view.html',
             controllerAs:'basic',
             controller: BasicExamplesController
@@ -59,7 +58,6 @@ angular.module('rootComponents', ['services', 'exFilters']);
     function APICallExampleDirective() {
         return {
             restrict: 'E',
-            replace: true,
             templateUrl: '/components/root/apicallexample.view.html',
             controllerAs: 'httpexample',
             controller: APICallExampleController
@@ -100,7 +98,6 @@ angular.module('rootComponents', ['services', 'exFilters']);
     function FormExampleDirective() {
         return {
             restrict: 'E',
-            replace: true,
             templateUrl: '/components/root/formexample.view.html',
             controllerAs: 'formexample',
             controller: FormExampleController
@@ -112,4 +109,35 @@ angular.module('rootComponents', ['services', 'exFilters']);
     }
 
     angular.module('rootComponents').directive('formExample', FormExampleDirective);
+})();
+
+!(function() {
+    function GithubExampleDirective() {
+        return {
+            restrict: 'E',
+            templateUrl: '/components/root/githubexample.view.html',
+            controllerAs: 'githubExample',
+            controller: GithubExampleController
+        }
+    }
+    function GithubExampleController(TitleService, GithubService) {
+        TitleService.title = 'Github API Example';
+        var self = this;
+        self.username='emuls';
+
+        self.load = function(){
+            self.loading = true;
+            GithubService.events(self.username).then(function success(response, status, headers){
+                self.loading = false;
+                self.data = response.data;
+                self.events = response.data.data;
+            }, function error(){
+                self.loading = false;
+                alert('error loading data');
+            });
+        }
+
+        self.load();
+    }
+    angular.module('rootComponents').directive('githubExample', GithubExampleDirective);
 })();
