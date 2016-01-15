@@ -129,28 +129,7 @@ angular.module('rootComponents', ['services', 'exFilters']);
             GithubService.setUser(self.username);
         }
 
-        self.load = function(){
-            self.loading = true;
-            GithubService.events().then(function success(response, status, headers){
-                self.loading = false;
-                self.data = response.data;
-                self.events = response.data.data;
-            }, function error(){
-                self.loading = false;
-                alert('error loading data');
-            });
-        }
-
-        self.usernameUpdated = function(){
-            self.load();
-        }
-
-        GithubService.registerListener(this);
         GithubService.setUser(self.username);
-
-        $scope.$on("$destroy", function() {
-            GithubService.deregisterListener(self);
-        });
     }
     angular.module('rootComponents').directive('githubExample', GithubExampleDirective);
 })();
