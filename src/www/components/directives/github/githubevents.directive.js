@@ -4,21 +4,14 @@
             restrict: 'E',
             controllerAs:'events',
             controller:GithubEventController,
-            template:'<div>' +
-            '<h4 ng-show="events.loading">Loading Data...</h4>' +
-            '<ul ng-show="!events.loading">' +
-            '<li ng-repeat="event in events.events">' +
-            '<img ng-src="{{event.actor.avatar_url}}" style="width:30px;height:30px"/>' +
-            '{{event.actor.login}} - {{event.repo.name}}' +
-            '</li>' +
-            '</ul>' +
-            '</div>'
+            templateUrl:'/components/directives/github/githubevents.view.html'
         };
     }
 
     function GithubEventController($scope, GithubService) {
         var self = this;
         self.loading = false;
+        self.limit = 5;
 
         self.usernameUpdated = function(){
             self.loading = true;
