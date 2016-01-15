@@ -13,19 +13,7 @@
     angular.module('exampleApp').directive('exampleCard', ExampleCardDirective);
 })();
 
-!(function() {
-    function CarBlurbDirective() {
-        return {
-            restrict: 'E',
-            replace: false,
-            scope: {
-                car: '='
-            },
-            templateUrl: '/components/directives/carblurb.view.html'
-        }
-    }
-    angular.module('exampleApp').directive('carBlurb', CarBlurbDirective);
-})();
+
 
 !(function(){
     function RainbowDateDirective(){
@@ -102,35 +90,7 @@
     angular.module('exampleApp').directive('transcludeBlue', TranscludeBlueDirective);
 })();
 
-!(function() {
-    function ContestExampleDirective() {
-        return {
-            restrict: 'E',
-            replace: true,
-            templateUrl: '/components/directives/clickcontestexample.view.html',
-            controllerAs: 'contest',
-            controller:ContestExampleController
-        }
-    }
 
-    function ContestExampleController($timeout) {
-        var self = this;
-        this.rolling = false;
-        this.dice = 4;
-        this.reroll = function () {
-            this.rolling = true;
-            $timeout(function () {
-                self.rolling = false;
-                self.dice = self.RNG(1, 6);
-            }, 1000)
-        };
-
-        this.RNG = function (min, max) {
-            return Math.random() * (max - min) + min;
-        };
-    }
-    angular.module('exampleApp').directive('contestExample', ContestExampleDirective);
-})();
 
 !(function(){
 

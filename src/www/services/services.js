@@ -1,5 +1,3 @@
-angular.module('services', ['ngResource']);
-
 !(function(){
     function InterpolateService($interpolate){
         return {

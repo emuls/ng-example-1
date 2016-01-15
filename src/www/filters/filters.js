@@ -1,5 +1,3 @@
-angular.module('exFilters', []);
-
 !(function() {
     function CapitalizeFilter() {
         var filter = function (input) {
