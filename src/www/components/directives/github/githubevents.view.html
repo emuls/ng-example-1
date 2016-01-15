@@ -1,9 +1,11 @@
 <div>
     <h4 ng-show="events.loading">Loading Data...</h4>
     <ul ng-show="!events.loading">
-        <li ng-repeat="event in events.events | limitTo:events.limit">
-            <img ng-src="{{event.actor.avatar_url}}" style="width:30px;height:30px"/>
-            {{event.actor.login}} - {{event.repo.name}}
-        </li>
+        <h4 ng-show="!events.events">Click GO</h4>
+        <div ng-show="events.events">
+            <li ng-repeat="event in events.events | limitTo:events.limit">
+                {{event.actor.login}} - {{event.repo.name}}
+            </li>
+        </div>
     </ul>
 </div>

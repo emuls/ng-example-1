@@ -1,7 +1,12 @@
 <div id="githubexample" class="exampleView">
     <input type="text" ng-model="githubExample.username"/>
     <input type="button" ng-click="githubExample.setUser()" value="GO" />
-    <example-card flex="" title="github events">
-        <github-events></github-events>
-    </example-card>
+    <div layout="row">
+        <example-card flex="" title="Profile">
+            <github-user></github-user>
+        </example-card>
+        <example-card flex="" title="Activity">
+            <github-events></github-events>
+        </example-card>
+    </div>
 </div>

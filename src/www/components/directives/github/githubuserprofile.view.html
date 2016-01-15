@@ -1,0 +1,28 @@
+<div id="githubprofile">
+    <h4 ng-show="user.loading">Loading Data...</h4>
+    <div ng-show="!user.loading">
+        <h4 ng-show="!user.data">Click GO</h4>
+        <div ng-show="user.data">
+            <img id="github_avatar" ng-src="{{user.data.avatar_url}}"/>
+            <div id="user_info">
+                {{user.data.name}}
+                <div>
+                    <label>User: </label>
+                    <a ng-href="{{user.data.html_url}}">{{user.data.login}}</a>
+                </div>
+                <div>
+                    <label>Public Repos: </label>
+                    {{user.data.public_repos}}
+                </div>
+                <div>
+                    <label>Followers: </label>
+                    {{user.data.followers}}
+                </div>
+                <div>
+                    <label>Following: </label>
+                    {{user.data.following}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
