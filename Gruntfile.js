@@ -31,9 +31,6 @@ module.exports = function(grunt) {
 		},
 		less: {
 			dist: {
-				options: {
-					paths: ["stylesheets/"],
-				},
 				files: {
 					"DIST/stylesheets/style.css": "src/**/*.less"
 				}
