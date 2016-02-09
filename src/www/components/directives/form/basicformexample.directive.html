@@ -1,0 +1,20 @@
+<form name="exampleForm" novalidate>
+    <div class="formField">
+        <label name="catsName">Cat's Name</label>
+        <input name="catsName" type="text" ng-model="catsName" placeholder="Cat's Name" required>
+        <span class="fieldHelp" ng-show="exampleForm.catsName.$invalid && !exampleForm.catsName.$pristine">Error</span>
+    </div>
+    <div class="formField">
+        <label name="lengthField">Length 3-5</label>
+        <input name="lengthField" type="text" ng-model="lengthField" placeholder="Enter a value length 3-5" required ng-minlength="3" ng-maxlength="5">
+        <span class="fieldHelp" ng-show="exampleForm.lengthField.$invalid && !exampleForm.lengthField.$pristine">Error</span>
+    </div>
+    <div class="formField">
+        <label name="email">Email Address</label>
+        <input name="email" type="email" ng-model="email" placeholder="abc@xyz.com">
+        <span class="fieldHelp" ng-show="exampleForm.email.$invalid && !exampleForm.catsName.$pristine">Error</span>
+    </div>
+    <div class="formSubmit">
+        <input type="submit" ng-disabled="exampleForm.$valid" />
+    </div>
+</form>

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 			files: ["src/**/*"],
-			tasks: ["clean", "copy:htmldist", "less:dist", "concat:dist"]
+			tasks: ["build"]
 		},
 		clean: ["DIST"],
 		copy: {
