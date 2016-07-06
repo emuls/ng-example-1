@@ -6,7 +6,6 @@ Basig NG examples
 
 * Clone repo
 * ```npm install```
-* ```node server/server.js```
 * ```grunt build```
 * ```cd server```
 * ```node server.js```
