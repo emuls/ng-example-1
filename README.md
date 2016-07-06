@@ -4,7 +4,7 @@ Basig NG examples
 
 ### Setup
 
-* Clone repo
+* ```git clone https://github.com/emuls/ng-example-1```
 * ```npm install```
 * ```grunt build```
 * ```cd server```
